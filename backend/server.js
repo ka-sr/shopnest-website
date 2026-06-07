@@ -1,11 +1,12 @@
 const express = require('express');
 const dotenv = require('dotenv');
+dotenv.config();
 const cors = require('cors');
 const connectDB = require('./config/db');
 const { seedInitialData } = require('./utils/seedData');
 const path = require('path');
 
-dotenv.config();
+// Ensure environment variables are loaded before connecting to DB
 connectDB().then(seedInitialData);
 
 const app = express();
