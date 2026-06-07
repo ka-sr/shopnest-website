@@ -5,7 +5,7 @@ const connectDB = require('./config/db');
 const { seedInitialData } = require('./utils/seedData');
 const path = require('path');
 
-dotenv.config({ path: path.resolve(__dirname, '.env') });
+dotenv.config();
 connectDB().then(seedInitialData);
 
 const app = express();

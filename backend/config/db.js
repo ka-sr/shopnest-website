@@ -1,12 +1,7 @@
 const mongoose = require('mongoose');
 
 const connectDB = async () => {
-  const mongoUri = process.env.MONGO_URI
-    || process.env.DATABASE_URL
-    || process.env.MONGODB_URI
-    || process.env.MONGO_URL
-    || process.env.MONGODB_URL
-    || process.env.ATLAS_URI;
+  const mongoUri ="mongodb+srv://kamal:kamal12345@cluster0.anr22tk.mongodb.net/?appName=Cluster0";
 
   if (!mongoUri) {
     console.error('Error: MongoDB connection string is not set. Set MONGO_URI, DATABASE_URL, MONGODB_URI, MONGO_URL, MONGODB_URL, or ATLAS_URI in environment variables.');
@@ -14,7 +9,7 @@ const connectDB = async () => {
   }
 
   try {
-    const conn = await mongoose.connect(mongoUri, {
+    const conn = await mongoose.connect("mongodb+srv://kamal:kamal12345@cluster0.anr22tk.mongodb.net/?appName=Cluster0", {
       useNewUrlParser: true,
       useUnifiedTopology: true
     });
